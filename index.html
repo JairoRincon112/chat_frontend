@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat en Vivo - WebSockets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Modal de Login -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <h2>Unirse al Chat</h2>
+      <input type="text" id="username-input" placeholder="Ingresa tu nombre..." maxlength="20" />
+      <button id="join-btn">Entrar</button>
+      <p id="login-error" class="error-msg"></p>
+    </div>
+  </div>
+
+  <div class="chat-container">
+    <!-- Sidebar / Panel Lateral -->
+    <aside class="sidebar">
+      <div class="status-box">
+        Estado: <span id="connection-status">CONNECTING</span>
+      </div>
+      <h3>Conectados (<span id="user-count">0</span>)</h3>
+      <ul id="user-list"></ul>
+    </aside>
+
+    <!-- Main Chat Box -->
+    <main class="chat-main">
+      <header class="chat-header">
+        <h2>Sala de Chat</h2>
+      </header>
+      
+      <div id="messages-box" class="messages-box"></div>
+      <div id="typing-indicator" class="typing-indicator"></div>
+
+      <form id="message-form" class="message-form">
+        <input type="text" id="message-input" placeholder="Escribe un mensaje..." autocomplete="off" disabled />
+        <button type="submit" id="send-btn" disabled>Enviar</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
